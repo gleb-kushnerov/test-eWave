@@ -32,6 +32,15 @@ export class Rating {
         let liCollection = [...list.children];
         liCollection
             .sort((a, b) => {
+                if (a.firstElementChild.textContent > b.firstElementChild.textContent) {
+                    return 1;
+                }
+                if (a.firstElementChild.textContent < b.firstElementChild.textContent) {
+                    return -1;
+                }
+                return 0;
+            })
+            .sort((a, b) => {
                     if (a.dataset.rating > b.dataset.rating) {
                         return -1;
                     }
