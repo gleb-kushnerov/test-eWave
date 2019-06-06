@@ -1,0 +1,80 @@
+@import "variables";
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:focus {
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  flex: 0 0 500px;
+  padding: 0;
+  margin: 0;
+
+  li {
+    box-sizing: border-box;
+    padding: var(--main-elements-padding);
+    display: flex;
+    justify-content: space-between;
+    border: var(--main-border);
+    border-radius: var(--main-border-radius);
+
+    .movie-name {
+      width: 250px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  li + li {
+    margin-top: 5px;
+  }
+}
+
+.rating {
+  width: 80px;
+  display: flex;
+  justify-content: space-between;
+  direction: rtl;
+
+  .active {
+    color: var(--yellow-color);
+  }
+}
+
+.rating > span:hover,
+.rating > span:hover ~ span {
+    color: var(--yellow-color);
+}
+
+.add-new-movie-container {
+  margin-bottom: 10px;
+
+  input {
+    box-sizing: border-box;
+    padding: var(--main-elements-padding);
+    width: 200px;
+    height: 40px;
+    border: var(--main-border);
+    border-radius: var(--main-border-radius);
+  }
+
+  button {
+    box-sizing: border-box;
+    height: 40px;
+    padding: var(--main-elements-padding);
+    border: var(--main-border);
+    border-radius: var(--main-border-radius);
+  }
+}
