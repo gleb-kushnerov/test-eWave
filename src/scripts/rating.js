@@ -7,7 +7,6 @@ export class Rating {
         this.storage = new MovieStorage();
         this.storage.init();
         this.checkStorageRating();
-        this.removeEmptyEl();
     }
 
     handleEvent(event) {
@@ -84,18 +83,8 @@ export class Rating {
                     this.sortMovies(this.listEl);
                     if (!movie.created) {
                         liEl.firstElementChild.textContent = movie.movie;
-                        this.removeEmptyEl();
                     }
                 }
-            }
-        }
-    }
-
-    removeEmptyEl() {
-        let liCollection = this.listEl.children;
-        for (let liEl of liCollection) {
-            if (liEl.firstElementChild.textContent === '') {
-                liEl.remove();
             }
         }
     }
